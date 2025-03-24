@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="276" id="KGk-i7-Jjw" customClass="SearchCell" customModule="MovieBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="276"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="276"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HST-bT-S87">
+                        <rect key="frame" x="0.0" y="0.0" width="449" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zBx-rt-ked">
+                                <rect key="frame" x="0.0" y="0.0" width="449" height="180"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPs-Be-9hQ">
+                                <rect key="frame" x="16" y="0.0" width="138" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Millions of movies, TV shows and people to discover. Explore now." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="686-dT-8X1">
+                                <rect key="frame" x="16" y="40" width="417" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeY-jN-KV1">
+                                <rect key="frame" x="16" y="110.33333333333331" width="417" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for a movie, tv show, person ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-ie-eja">
+                                        <rect key="frame" x="16" y="0.0" width="401" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiC-Jj-9En">
+                                        <rect key="frame" x="0.0" y="0.0" width="417" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UV9-Xc-e1S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ja1-ie-eja" secondAttribute="trailing" id="BFS-3w-R4N"/>
+                                    <constraint firstItem="hiC-Jj-9En" firstAttribute="top" secondItem="aeY-jN-KV1" secondAttribute="top" id="FjA-pi-s0n"/>
+                                    <constraint firstItem="hiC-Jj-9En" firstAttribute="leading" secondItem="aeY-jN-KV1" secondAttribute="leading" id="LLj-Sj-c1Q"/>
+                                    <constraint firstItem="Ja1-ie-eja" firstAttribute="top" secondItem="aeY-jN-KV1" secondAttribute="top" id="ag1-tL-376"/>
+                                    <constraint firstItem="Ja1-ie-eja" firstAttribute="leading" secondItem="aeY-jN-KV1" secondAttribute="leading" constant="16" id="oOW-Uq-rPM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ja1-ie-eja" secondAttribute="bottom" id="okt-aE-1eA"/>
+                                    <constraint firstAttribute="trailing" secondItem="hiC-Jj-9En" secondAttribute="trailing" id="wcW-Tx-Fur"/>
+                                    <constraint firstAttribute="height" constant="40" id="xfB-3N-p6Z"/>
+                                    <constraint firstItem="Ja1-ie-eja" firstAttribute="centerY" secondItem="aeY-jN-KV1" secondAttribute="centerY" id="yU4-4L-Ihd"/>
+                                    <constraint firstAttribute="bottom" secondItem="hiC-Jj-9En" secondAttribute="bottom" id="zMd-jJ-8tB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zBx-rt-ked" secondAttribute="bottom" id="3BB-D5-dcx"/>
+                            <constraint firstAttribute="trailing" secondItem="aeY-jN-KV1" secondAttribute="trailing" constant="16" id="9aF-yg-i7i"/>
+                            <constraint firstAttribute="height" constant="180" id="9bU-iw-myS"/>
+                            <constraint firstItem="686-dT-8X1" firstAttribute="leading" secondItem="SPs-Be-9hQ" secondAttribute="leading" id="JzI-Rf-QHL"/>
+                            <constraint firstAttribute="trailing" secondItem="686-dT-8X1" secondAttribute="trailing" constant="16" id="MSE-9H-I7w"/>
+                            <constraint firstItem="zBx-rt-ked" firstAttribute="top" secondItem="HST-bT-S87" secondAttribute="top" id="Qrn-AU-kHN"/>
+                            <constraint firstItem="aeY-jN-KV1" firstAttribute="leading" secondItem="HST-bT-S87" secondAttribute="leading" constant="16" id="cdl-MD-kQw"/>
+                            <constraint firstItem="SPs-Be-9hQ" firstAttribute="top" secondItem="HST-bT-S87" secondAttribute="top" id="f8r-Cr-xJf"/>
+                            <constraint firstItem="zBx-rt-ked" firstAttribute="leading" secondItem="HST-bT-S87" secondAttribute="leading" id="hMy-J4-fip"/>
+                            <constraint firstItem="SPs-Be-9hQ" firstAttribute="leading" secondItem="HST-bT-S87" secondAttribute="leading" constant="16" id="jAp-6O-RH3"/>
+                            <constraint firstItem="aeY-jN-KV1" firstAttribute="top" secondItem="686-dT-8X1" secondAttribute="bottom" constant="32" id="oa6-Al-UOC"/>
+                            <constraint firstItem="686-dT-8X1" firstAttribute="top" secondItem="SPs-Be-9hQ" secondAttribute="bottom" constant="4" id="vyg-hT-42k"/>
+                            <constraint firstAttribute="trailing" secondItem="zBx-rt-ked" secondAttribute="trailing" id="wID-JU-MX4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HST-bT-S87" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3c9-1E-PMA"/>
+                    <constraint firstAttribute="bottom" secondItem="HST-bT-S87" secondAttribute="bottom" id="DRA-56-w3H"/>
+                    <constraint firstItem="HST-bT-S87" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EcN-Pq-QqW"/>
+                    <constraint firstAttribute="trailing" secondItem="HST-bT-S87" secondAttribute="trailing" id="VO9-dM-X9v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bioLabel" destination="686-dT-8X1" id="fNe-CT-arD"/>
+                <outlet property="searcPlaceolderLabel" destination="Ja1-ie-eja" id="hCR-oV-M3B"/>
+                <outlet property="searchButton" destination="hiC-Jj-9En" id="vAg-Kb-Ctk"/>
+                <outlet property="searchImageView" destination="zBx-rt-ked" id="pVV-Hb-aMF"/>
+                <outlet property="searchView" destination="aeY-jN-KV1" id="dXs-JK-YaV"/>
+                <outlet property="titleLabel" destination="SPs-Be-9hQ" id="YLO-yY-jam"/>
+            </connections>
+            <point key="canvasLocation" x="89.312977099236633" y="70.422535211267615"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="background" width="1920" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
