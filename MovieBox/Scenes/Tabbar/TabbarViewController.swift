@@ -34,7 +34,7 @@ final class TabBarViewController: UITabBarController {
     
     private func makeFavorite() -> UINavigationController {
         let navVC = BaseNavigationController()
-        let favoriteUseCase = FavoriteUseCase()
+        let favoriteUseCase = FavoriteUseCase(movieRepository: MovieRepository())
         let favoriteNavigator = FavoriteNavigator(navigationController: navVC)
         let favoriteVM = FavoriteViewModel(useCase: favoriteUseCase, navigator: favoriteNavigator)
         let favoriteVC = FavoriteViewController()

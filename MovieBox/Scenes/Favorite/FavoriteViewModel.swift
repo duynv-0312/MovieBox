@@ -14,5 +14,15 @@ struct FavoriteViewModel {
 }
 
 extension FavoriteViewModel {
+    func fetchFavoriteMovies(completion: @escaping (Result<[MovieFavor], Error>) -> Void) {
+        useCase.fetchFavoriteMovies(completion: completion)
+    }
     
+    func deleteFavorite(movieID: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+        useCase.deleteFavorite(movieID: movieID, completion: completion)
+    }
+    
+    func toMovieDetailScreen(movieID: Int) {
+        navigator.toMovieDetailScreen(movieID: movieID)
+    }
 }

@@ -26,7 +26,6 @@ final class ListMovieTableViewCell: UITableViewCell {
     private func configView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-//        collectionView.register(cellType: MovieCollectionViewCell.self, forCellWithReuseIdentifier: )
         collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: "MovieCollectionViewCell")
     }
@@ -42,9 +41,8 @@ extension ListMovieTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: MovieCollectionViewCell.self)
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell",
+                                                            for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configCell(movie: movies[indexPath.row])

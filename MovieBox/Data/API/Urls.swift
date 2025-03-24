@@ -52,14 +52,6 @@ struct Urls {
         return baseUrl + "/movie/\(id)?api_key=\(key)&append_to_response=credits,similar,videos"
     }
     
-    func getActorDetailUrl(id: Int) -> String {
-        return baseUrl + "/person/\(id)?api_key=\(key)&append_to_response=movie_credits"
-    }
-    
-    func getSearchUrl(query: String, page: Int) -> String {
-        return baseUrl + "/search/movie?api_key=\(key)&query=\(query)&page=\(page)"
-    }
-    
     func getTrailerUrl(key: String) -> String {
         return "https://www.youtube.com/watch?v=\(key)"
     }
