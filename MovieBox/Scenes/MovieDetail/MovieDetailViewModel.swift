@@ -23,8 +23,13 @@ extension MovieDetailViewModel {
     }
     
     func toggleFavorite(movie: Movie, completion: @escaping (Result<Bool, Error>) -> Void) {
-        if isFavorite(movieID: movie.id ?? -1) {
-            useCase.removeFavorite(movieID: movie.id ?? -1) { result in
+        guard let movieID = movie.id else {
+            completion(.failure(AppError.normalError("Invalid movie ID")))
+            return
+        }
+        
+        if isFavorite(movieID: movieID) {
+            useCase.removeFavorite(movieID: movieID) { result in
                 completion(result.map { _ in false })
             }
         } else {

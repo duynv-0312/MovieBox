@@ -33,11 +33,7 @@ final class FavoriteMovieCell: UITableViewCell {
             let movieImagePath = Urls.shared.getImage(urlString: path)
             movieImageView.loadImage(fromURL: movieImagePath)
         }
-        if let voteAverage = movie.voteAverage {
-            rateLabel.text = "\(voteAverage)"
-        } else {
-            rateLabel.text = "N/A"
-        }
+        rateLabel.text = movie.voteAverage.map { "\($0)" } ?? "N/A"
         movieNameLabel.text = movie.title
         releaseDateLabel.text = movie.releaseDate
     }

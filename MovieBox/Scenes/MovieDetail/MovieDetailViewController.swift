@@ -69,10 +69,11 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
         switch section {
         case .info:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailInfoCell", for: indexPath) as? MovieDetailInfoCell else {
+            guard let movieID = movie.id,
+                  let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailInfoCell", for: indexPath) as? MovieDetailInfoCell else {
                 return UITableViewCell()
             }
-            let isFavorite = viewModel.isFavorite(movieID: movie.id ?? -1)
+            let isFavorite = viewModel.isFavorite(movieID: movieID)
             cell.configCell(movie: movie, isFavorite: isFavorite)
 
             cell.tappedFavorite = { [weak self] movie in
