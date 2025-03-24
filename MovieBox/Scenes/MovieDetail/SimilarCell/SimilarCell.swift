@@ -21,6 +21,12 @@ final class SimilarCell: UITableViewCell {
         }
     }
     
+    private enum LayoutOptions {
+        static let heightSimilarCell: CGFloat = 220
+        static let widthSimilarCell: CGFloat = 250
+    }
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configView()
@@ -65,7 +71,7 @@ extension SimilarCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 220)
+        return CGSize(width: LayoutOptions.widthSimilarCell, height: LayoutOptions.heightSimilarCell)
     }
     
     func collectionView(_ collectionView: UICollectionView,

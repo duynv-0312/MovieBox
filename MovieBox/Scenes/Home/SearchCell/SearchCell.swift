@@ -27,7 +27,7 @@ final class SearchCell: UITableViewCell {
         titleLabel.text = "Welcome"
         bioLabel.text = "Millions of movies, TV shows and peopled to discover. Explore now."
         searchImageView.addGradientOverlay()
-        searchView.layer.cornerRadius = 12.0
+        searchView.layer.cornerRadius = Constants.cornerImage
         searchView.layer.cornerCurve = .continuous
         searcPlaceolderLabel.font = .systemFont(ofSize: 14)
         searcPlaceolderLabel.textColor = .secondaryLabel

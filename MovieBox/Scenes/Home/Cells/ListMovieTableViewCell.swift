@@ -18,6 +18,11 @@ final class ListMovieTableViewCell: UITableViewCell {
         }
     }
     
+    private enum LayoutOptions {
+        static let heightMovieCell: CGFloat = 290
+        static let widthMovieCell: CGFloat = 160
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configView()
@@ -58,6 +63,6 @@ extension ListMovieTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 290)
+        return CGSize(width: LayoutOptions.widthMovieCell, height: LayoutOptions.heightMovieCell)
     }
 }

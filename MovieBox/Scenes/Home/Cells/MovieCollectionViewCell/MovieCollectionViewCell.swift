@@ -20,7 +20,7 @@ final class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     private func configView() {
-        posterImageView.layer.cornerRadius = 12
+        posterImageView.layer.cornerRadius = Constants.cornerImage
         releaseDateLabel.textColor = .secondaryLabel
     }
     
