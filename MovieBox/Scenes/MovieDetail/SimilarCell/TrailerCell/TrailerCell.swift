@@ -21,9 +21,11 @@ final class TrailerCell: UICollectionViewCell {
     
     private func configView() {
         containerView.layer.cornerRadius = Constants.cornerImage
-        containerView.layer.cornerCurve = .continuous
+        if #available(iOS 13.0, *) {
+            containerView.layer.cornerCurve = .continuous
+            backDropImageView.layer.cornerCurve = .continuous
+        }
         backDropImageView.layer.cornerRadius = Constants.cornerImage
-        backDropImageView.layer.cornerCurve = .continuous
     }
     
     func configSimilarCell(movie: Movie) {

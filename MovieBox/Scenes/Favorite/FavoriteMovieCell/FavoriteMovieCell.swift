@@ -23,7 +23,6 @@ final class FavoriteMovieCell: UITableViewCell {
 
     private func configView() {
         containerView.layer.cornerRadius = Constants.cornerImage
-        containerView.layer.cornerCurve = .continuous
         movieImageView.layer.cornerRadius = Constants.cornerImage
         rateView.layer.cornerRadius = Constants.cornerImage / 3 // 3 is number of star
     }

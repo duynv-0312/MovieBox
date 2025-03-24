@@ -21,7 +21,11 @@ final class MovieCollectionViewCell: UICollectionViewCell {
     
     private func configView() {
         posterImageView.layer.cornerRadius = Constants.cornerImage
-        releaseDateLabel.textColor = .secondaryLabel
+        if #available(iOS 13.0, *) {
+            releaseDateLabel.textColor = .secondaryLabel
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     func configCell(movie: Movie) {

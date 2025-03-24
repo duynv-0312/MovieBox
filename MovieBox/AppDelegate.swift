@@ -10,9 +10,12 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NetWorkMonitor.shared.startMonitoring()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        showTabbar()
         return true
     }
     
@@ -39,5 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    private func showTabbar() {
+        let vc = TabBarViewController()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
     }
 }

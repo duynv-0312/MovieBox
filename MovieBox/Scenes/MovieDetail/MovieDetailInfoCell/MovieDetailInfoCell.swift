@@ -29,15 +29,15 @@ class MovieDetailInfoCell: UITableViewCell {
     private func configView() {
         backDropImageView.addGradientOverlay()
         posterImageView.layer.cornerRadius = Constants.cornerImage
-        posterImageView.layer.cornerCurve = .continuous
+        if #available(iOS 13.0, *) {
+            posterImageView.layer.cornerCurve = .continuous
+        }
         posterImageView.layer.borderColor = UIColor.white.cgColor
         posterImageView.layer.borderWidth = 3
         favoriteButton.tintColor = .systemPink
-        let configuration = UIImage.SymbolConfiguration(pointSize: 40)
-        playButton.setPreferredSymbolConfiguration(configuration, forImageIn: .normal)
         playButton.tintColor = .white
         movieNameLabel.textColor = .white
-        descriptionLabel.textColor = .secondaryLabel
+        descriptionLabel.textColor = .gray
     }
     
     
@@ -54,8 +54,8 @@ class MovieDetailInfoCell: UITableViewCell {
     }
     
     func updateFavoriteButtonImage(isFavorite: Bool) {
-        let imageName = isFavorite ? "heart.fill" : "heart"
-        favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
+        let imageName = isFavorite ? "heartFill" : "heart"
+        favoriteButton.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
     
     @IBAction func tappedFavoriteButton(_ sender: Any) {

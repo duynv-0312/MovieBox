@@ -36,11 +36,9 @@ final class MovieDetailViewController: UIViewController, Bindable {
     }
 
     private func getMovieDetail() {
-        loading(true)
         viewModel.getMovieDetail { [weak self] result in
             guard let self else { return }
             DispatchQueue.main.async {
-                self.loading(false)
                 switch result {
                 case .success(let movieDetail):
                     self.movie = movieDetail

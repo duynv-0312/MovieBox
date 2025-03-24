@@ -17,16 +17,16 @@ enum TabbarItems {
         switch self {
         case .home:
             return UITabBarItem(title: "Home",
-                                image: UIImage(systemName: "house"),
-                                selectedImage: UIImage(systemName: "house.fill"))
+                                image: UIImage(named: "home")?.withRenderingMode(.alwaysOriginal),
+                                selectedImage: UIImage(named: "homeFill")?.withRenderingMode(.alwaysOriginal))
         case .favorite:
             return UITabBarItem(title: "Favorite",
-                                image: UIImage(systemName: "heart"),
-                                selectedImage: UIImage(systemName: "heart.fill"))
+                                image: UIImage(named: "heart")?.withRenderingMode(.alwaysOriginal),
+                                selectedImage: UIImage(named: "heartFill")?.withRenderingMode(.alwaysOriginal))
         case .setting:
             return UITabBarItem(title: "Setting",
-                                image: UIImage(systemName: "gear"),
-                                selectedImage: UIImage(systemName: "gear.fill"))
+                                image: UIImage(named: "setting")?.withRenderingMode(.alwaysOriginal),
+                                selectedImage: UIImage(named: "settingFill")?.withRenderingMode(.alwaysOriginal))
         }
     }
 }
