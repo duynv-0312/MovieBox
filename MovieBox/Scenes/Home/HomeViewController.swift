@@ -12,7 +12,6 @@ final class HomeViewController: UIViewController, Bindable {
     @IBOutlet private weak var tableView: UITableView!
     
     var viewModel: HomeViewModel!
-    
     var popularMovies: [Movie] = []
     var topRatedMovies: [Movie] = []
     var upComingMovies: [Movie] = []
@@ -67,14 +66,7 @@ final class HomeViewController: UIViewController, Bindable {
                     self.popularMovies = movieResponse.results ?? []
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                self.showError(error: error)
             }
             self.dispatchGroup.leave()
         }
@@ -91,14 +83,7 @@ final class HomeViewController: UIViewController, Bindable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                self.showError(error: error)
             }
             self.dispatchGroup.leave()
         }
@@ -115,14 +100,7 @@ final class HomeViewController: UIViewController, Bindable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                self.showError(error: error)
             }
             self.dispatchGroup.leave()
         }
@@ -139,14 +117,7 @@ final class HomeViewController: UIViewController, Bindable {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                switch error {
-                case let AppError.normalError(message):
-                    self.showError(message: message)
-                case AppError.noInternet:
-                    self.showError(title: AppError.noInternet.description)
-                default:
-                    self.showError(message: error.localizedDescription)
-                }
+                self.showError(error: error)
             }
             self.dispatchGroup.leave()
         }
@@ -197,6 +168,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configCell(movies: movies)
             cell.tappedMovie = { [weak self] movie in
                 guard let self, let movieID = movie.id else { return }
+                self.viewModel.toMovieDetailScreen(movieID: movieID)
             }
             return cell
         }
@@ -215,7 +187,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         movieHeader.configView(title: sectionType.title)
         movieHeader.showMoreTapped = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
+            self.viewModel.toListMovieScreen(category: sectionType.urlString, title: sectionType.title)
         }
         return movieHeader
     }

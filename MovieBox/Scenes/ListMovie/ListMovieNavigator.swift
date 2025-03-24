@@ -1,26 +1,26 @@
 //
-//  FavoriteNavigator.swift
+//  ListMovieNavigator.swift
 //  MovieBox
 //
-//  Created by Duy Nguyen on 22/3/25.
+//  Created by Duy Nguyen on 24/3/25.
 //
 
 import Foundation
 import UIKit
 
-protocol FavoriteNavigatorType {
+protocol ListMovieNavigatorType {
     func toMovieDetailScreen(movieID: Int)
 }
 
-struct FavoriteNavigator: FavoriteNavigatorType {
+struct ListMovieNavigator: ListMovieNavigatorType {
     unowned let navigationController: UINavigationController
-
+    
     func toMovieDetailScreen(movieID: Int) {
         let useCase = MovieDetailUseCase(movieRepository: MovieRepository())
         let navigator = MovieDetailNavigator(navigationController: navigationController)
-        let viewModel = MovieDetailViewModel(useCase: useCase, navigator: navigator, movieID: movieID)
+        let vm = MovieDetailViewModel(useCase: useCase, navigator: navigator, movieID: movieID)
         let vc = MovieDetailViewController()
-        vc.bindViewModel(to: viewModel)
+        vc.bindViewModel(to: vm)
         navigationController.pushViewController(vc, animated: true)
     }
 }
